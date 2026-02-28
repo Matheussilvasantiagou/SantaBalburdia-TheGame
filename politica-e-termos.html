@@ -4,143 +4,270 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Política de Privacidade e Termos de Uso - Santa Balbúrdia - The Game</title>
+  <link rel="icon" href="LOGOSBOFICIAL.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; max-width: 720px; margin: 0 auto; padding: 24px; color: #333; }
-    h1 { font-size: 1.5rem; margin-top: 2rem; }
-    h2 { font-size: 1.2rem; margin-top: 1.5rem; }
-    p, li { margin: 0.5rem 0; }
-    ul { padding-left: 1.5rem; }
-    .updated { color: #666; font-size: 0.9rem; }
-    a { color: #7C3AED; }
-    .nav { background: #f5f5f5; padding: 1rem 1.25rem; border-radius: 8px; margin-bottom: 2rem; }
-    .nav a { margin-right: 1rem; }
-    .section { margin-top: 3rem; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #5F2E8E 0%, #4a2070 50%, #3d1a5c 100%);
+      color: #ffffff;
+      line-height: 1.7;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .logo-small {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .back:hover { color: #ffffff; }
+
+    .nav {
+      display: flex;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .updated {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, li {
+      margin: 0.5rem 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    li {
+      margin: 0.35rem 0;
+    }
+
+    strong { color: #ffffff; }
+
+    hr {
+      margin: 3rem 0;
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .footer small {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.875rem;
+    }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <a href="#privacidade">Política de Privacidade</a>
-    <a href="#termos">Termos de Uso</a>
-  </nav>
+  <div class="container">
+    <div class="header">
+      <a href="index.html" class="back">← Voltar ao início</a>
+      <img src="LOGOSBOFICIAL.png" alt="Santa Balbúrdia" class="logo-small">
+    </div>
 
-  <section id="privacidade" class="section">
-    <h1>Política de Privacidade</h1>
-    <p class="updated">Santa Balbúrdia - The Game — Última atualização: Fevereiro de 2026</p>
+    <nav class="nav">
+      <a href="#privacidade">Política de Privacidade</a>
+      <a href="#termos">Termos de Uso</a>
+    </nav>
 
-    <p>Esta Política de Privacidade descreve como o aplicativo <strong>Santa Balbúrdia - The Game</strong> ("App") coleta, usa e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e demais normas aplicáveis.</p>
+    <section id="privacidade">
+      <h1>Política de Privacidade</h1>
+      <p class="updated">Santa Balbúrdia - The Game — Última atualização: Fevereiro de 2026</p>
 
-    <h2>1. Dados que Coletamos</h2>
-    <p>O App pode coletar os seguintes dados:</p>
-    <ul>
-      <li><strong>Dados de conta:</strong> e-mail e nome (quando você se cadastra com e-mail/senha, Google ou Apple);</li>
-      <li><strong>Identificadores de dispositivo:</strong> utilizados para autenticação e sincronização de assinaturas (por exemplo, ID do usuário vinculado à compra);</li>
-      <li><strong>Dados de compras:</strong> informações relacionadas a assinaturas e compras dentro do app, processadas pelas lojas (Apple, Google) e pelo provedor de assinaturas (RevenueCat), para validar seu acesso premium;</li>
-      <li><strong>Dados locais:</strong> preferências de jogo e sessão armazenadas apenas no seu dispositivo (ex.: tema, progresso local).</li>
-    </ul>
+      <p>Esta Política de Privacidade descreve como o aplicativo <strong>Santa Balbúrdia - The Game</strong> ("App") coleta, usa e protege suas informações, em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e demais normas aplicáveis.</p>
 
-    <h2>2. Como Utilizamos os Dados</h2>
-    <p>Utilizamos os dados para:</p>
-    <ul>
-      <li>Permitir o login e a gestão da sua conta;</li>
-      <li>Validar e gerenciar assinaturas e conteúdo premium;</li>
-      <li>Melhorar o funcionamento do App;</li>
-      <li>Cumprir obrigações legais.</li>
-    </ul>
+      <h2>1. Dados que Coletamos</h2>
+      <p>O App pode coletar os seguintes dados:</p>
+      <ul>
+        <li><strong>Dados de conta:</strong> e-mail e nome (quando você se cadastra com e-mail/senha, Google ou Apple);</li>
+        <li><strong>Identificadores de dispositivo:</strong> utilizados para autenticação e sincronização de assinaturas (por exemplo, ID do usuário vinculado à compra);</li>
+        <li><strong>Dados de compras:</strong> informações relacionadas a assinaturas e compras dentro do app, processadas pelas lojas (Apple, Google) e pelo provedor de assinaturas (RevenueCat), para validar seu acesso premium;</li>
+        <li><strong>Dados locais:</strong> preferências de jogo e sessão armazenadas apenas no seu dispositivo (ex.: tema, progresso local).</li>
+      </ul>
 
-    <h2>3. Base Legal (LGPD)</h2>
-    <p>O tratamento dos dados está baseado em:</p>
-    <ul>
-      <li><strong>Execução de contrato:</strong> para fornecer o serviço contratado (acesso ao App e conteúdo premium);</li>
-      <li><strong>Legítimo interesse:</strong> para garantir a segurança e integridade do serviço;</li>
-      <li><strong>Consentimento:</strong> quando aplicável, para finalidades específicas indicadas no momento da coleta.</li>
-    </ul>
+      <h2>2. Como Utilizamos os Dados</h2>
+      <p>Utilizamos os dados para:</p>
+      <ul>
+        <li>Permitir o login e a gestão da sua conta;</li>
+        <li>Validar e gerenciar assinaturas e conteúdo premium;</li>
+        <li>Melhorar o funcionamento do App;</li>
+        <li>Cumprir obrigações legais.</li>
+      </ul>
 
-    <h2>4. Compartilhamento de Dados</h2>
-    <p>Os dados podem ser compartilhados com:</p>
-    <ul>
-      <li><strong>Firebase (Google):</strong> autenticação e banco de dados;</li>
-      <li><strong>RevenueCat:</strong> gestão de assinaturas e compras;</li>
-      <li><strong>Apple e Google:</strong> para processamento de login (Sign in with Apple, Google Sign-In) e pagamentos.</li>
-    </ul>
-    <p>Não vendemos seus dados pessoais a terceiros.</p>
+      <h2>3. Base Legal (LGPD)</h2>
+      <p>O tratamento dos dados está baseado em:</p>
+      <ul>
+        <li><strong>Execução de contrato:</strong> para fornecer o serviço contratado (acesso ao App e conteúdo premium);</li>
+        <li><strong>Legítimo interesse:</strong> para garantir a segurança e integridade do serviço;</li>
+        <li><strong>Consentimento:</strong> quando aplicável, para finalidades específicas indicadas no momento da coleta.</li>
+      </ul>
 
-    <h2>5. Armazenamento e Segurança</h2>
-    <p>Os dados são armazenados em servidores de parceiros confiáveis, com medidas técnicas e organizacionais de segurança. Dados sensíveis de pagamento são processados diretamente pelas lojas (Apple Pay, Google Play), não sendo armazenados pelo App.</p>
+      <h2>4. Compartilhamento de Dados</h2>
+      <p>Os dados podem ser compartilhados com:</p>
+      <ul>
+        <li><strong>Firebase (Google):</strong> autenticação e banco de dados;</li>
+        <li><strong>RevenueCat:</strong> gestão de assinaturas e compras;</li>
+        <li><strong>Apple e Google:</strong> para processamento de login (Sign in with Apple, Google Sign-In) e pagamentos.</li>
+      </ul>
+      <p>Não vendemos seus dados pessoais a terceiros.</p>
 
-    <h2>6. Seus Direitos (LGPD)</h2>
-    <p>Você tem direito a:</p>
-    <ul>
-      <li>Confirmar a existência de tratamento de dados;</li>
-      <li>Acessar seus dados;</li>
-      <li>Corrigir dados incompletos ou desatualizados;</li>
-      <li>Anonimizar, bloquear ou eliminar dados desnecessários;</li>
-      <li>Revogar o consentimento.</li>
-    </ul>
-    <p>Para exercer esses direitos, entre em contato através das Configurações do App ou pelo e-mail informado nas lojas.</p>
+      <h2>5. Armazenamento e Segurança</h2>
+      <p>Os dados são armazenados em servidores de parceiros confiáveis, com medidas técnicas e organizacionais de segurança. Dados sensíveis de pagamento são processados diretamente pelas lojas (Apple Pay, Google Play), não sendo armazenados pelo App.</p>
 
-    <h2>7. Retenção dos Dados</h2>
-    <p>Mantemos os dados enquanto sua conta estiver ativa ou conforme necessário para cumprir obrigações legais. Ao excluir sua conta, os dados serão removidos dentro do prazo legal aplicável.</p>
+      <h2>6. Seus Direitos (LGPD)</h2>
+      <p>Você tem direito a:</p>
+      <ul>
+        <li>Confirmar a existência de tratamento de dados;</li>
+        <li>Acessar seus dados;</li>
+        <li>Corrigir dados incompletos ou desatualizados;</li>
+        <li>Anonimizar, bloquear ou eliminar dados desnecessários;</li>
+        <li>Revogar o consentimento.</li>
+      </ul>
+      <p>Para exercer esses direitos, entre em contato através das Configurações do App ou pelo e-mail informado nas lojas.</p>
 
-    <h2>8. Menores de Idade</h2>
-    <p>O App é destinado a usuários com 18 anos ou mais. Não coletamos intencionalmente dados de menores. Se tomarmos conhecimento de coleta de dados de menor, adotaremos medidas para exclusão.</p>
+      <h2>7. Retenção dos Dados</h2>
+      <p>Mantemos os dados enquanto sua conta estiver ativa ou conforme necessário para cumprir obrigações legais. Ao excluir sua conta, os dados serão removidos dentro do prazo legal aplicável.</p>
 
-    <h2>9. Alterações</h2>
-    <p>Esta Política pode ser atualizada. Alterações significativas serão comunicadas por meio do App ou e-mail. O uso continuado após as alterações constitui aceitação da nova Política.</p>
+      <h2>8. Menores de Idade</h2>
+      <p>O App é destinado a usuários com 18 anos ou mais. Não coletamos intencionalmente dados de menores. Se tomarmos conhecimento de coleta de dados de menor, adotaremos medidas para exclusão.</p>
 
-    <h2>10. Contato</h2>
-    <p>Para dúvidas sobre privacidade ou exercício de direitos, entre em contato através do App em Configurações ou pelo e-mail informado nas lojas de aplicativos.</p>
-  </section>
+      <h2>9. Alterações</h2>
+      <p>Esta Política pode ser atualizada. Alterações significativas serão comunicadas por meio do App ou e-mail. O uso continuado após as alterações constitui aceitação da nova Política.</p>
 
-  <hr style="margin: 3rem 0; border: none; border-top: 1px solid #ddd;">
+      <h2>10. Contato</h2>
+      <p>Para dúvidas sobre privacidade ou exercício de direitos, entre em contato através do App em Configurações ou pelo e-mail informado nas lojas de aplicativos.</p>
+    </section>
 
-  <section id="termos" class="section">
-    <h1>Termos de Uso (EULA)</h1>
-    <p class="updated">Santa Balbúrdia - The Game — Última atualização: Fevereiro de 2026</p>
+    <hr>
 
-    <h2>1. Aceitação dos Termos</h2>
-    <p>Ao baixar, instalar ou utilizar o aplicativo <strong>Santa Balbúrdia - The Game</strong> ("App"), você concorda com estes Termos de Uso ("Termos"). Se você não concordar com estes Termos, não utilize o App.</p>
+    <section id="termos">
+      <h1>Termos de Uso (EULA)</h1>
+      <p class="updated">Santa Balbúrdia - The Game — Última atualização: Fevereiro de 2026</p>
 
-    <h2>2. Descrição do Serviço</h2>
-    <p>O Santa Balbúrdia - The Game é um jogo de cartas para entretenimento, destinado ao público adulto (18 anos ou mais). O App oferece conteúdo de jogo de festa e permite acesso a pacotes adicionais de cartas mediante assinatura.</p>
+      <h2>1. Aceitação dos Termos</h2>
+      <p>Ao baixar, instalar ou utilizar o aplicativo <strong>Santa Balbúrdia - The Game</strong> ("App"), você concorda com estes Termos de Uso ("Termos"). Se você não concordar com estes Termos, não utilize o App.</p>
 
-    <h2>3. Conta e Cadastro</h2>
-    <p>Para acessar certas funcionalidades, você poderá criar uma conta utilizando e-mail e senha, Google Sign-In ou Sign in with Apple. Você é responsável por manter a confidencialidade de suas credenciais e por todas as atividades realizadas em sua conta.</p>
+      <h2>2. Descrição do Serviço</h2>
+      <p>O Santa Balbúrdia - The Game é um jogo de cartas para entretenimento, destinado ao público adulto (18 anos ou mais). O App oferece conteúdo de jogo de festa e permite acesso a pacotes adicionais de cartas mediante assinatura.</p>
 
-    <h2>4. Assinaturas e Pagamentos</h2>
-    <p>O App pode oferecer assinaturas ou compras dentro do aplicativo. Ao assinar, você concorda em pagar as taxas conforme divulgadas no momento da compra. As assinaturas podem ser renovadas automaticamente, a menos que canceladas antes do fim do período. O cancelamento pode ser feito pelas configurações da sua conta Apple ou Google. Reembolsos seguem as políticas das respectivas lojas (App Store e Google Play).</p>
+      <h2>3. Conta e Cadastro</h2>
+      <p>Para acessar certas funcionalidades, você poderá criar uma conta utilizando e-mail e senha, Google Sign-In ou Sign in with Apple. Você é responsável por manter a confidencialidade de suas credenciais e por todas as atividades realizadas em sua conta.</p>
 
-    <h2>5. Uso Aceitável</h2>
-    <p>Você concorda em:</p>
-    <ul>
-      <li>Utilizar o App apenas para fins lícitos e de entretenimento;</li>
-      <li>Não modificar, engenharia reversa ou descompilar o App;</li>
-      <li>Não usar o App de forma que possa prejudicar outros usuários ou o serviço;</li>
-      <li>Cumprir todas as leis aplicáveis.</li>
-    </ul>
+      <h2>4. Assinaturas e Pagamentos</h2>
+      <p>O App pode oferecer assinaturas ou compras dentro do aplicativo. Ao assinar, você concorda em pagar as taxas conforme divulgadas no momento da compra. As assinaturas podem ser renovadas automaticamente, a menos que canceladas antes do fim do período. O cancelamento pode ser feito pelas configurações da sua conta Apple ou Google. Reembolsos seguem as políticas das respectivas lojas (App Store e Google Play).</p>
 
-    <h2>6. Idade Mínima</h2>
-    <p>O App é classificado para maiores de 18 anos. Ao utilizar o App, você declara ter idade mínima de 18 anos ou ter autorização parental adequada.</p>
+      <h2>5. Uso Aceitável</h2>
+      <p>Você concorda em:</p>
+      <ul>
+        <li>Utilizar o App apenas para fins lícitos e de entretenimento;</li>
+        <li>Não modificar, engenharia reversa ou descompilar o App;</li>
+        <li>Não usar o App de forma que possa prejudicar outros usuários ou o serviço;</li>
+        <li>Cumprir todas as leis aplicáveis.</li>
+      </ul>
 
-    <h2>7. Propriedade Intelectual</h2>
-    <p>Todos os direitos de propriedade intelectual do App, incluindo textos, imagens, logotipos e código, pertencem ao desenvolvedor. A licença concedida é limitada, não exclusiva e intransferível, para uso pessoal e não comercial.</p>
+      <h2>6. Idade Mínima</h2>
+      <p>O App é classificado para maiores de 18 anos. Ao utilizar o App, você declara ter idade mínima de 18 anos ou ter autorização parental adequada.</p>
 
-    <h2>8. Limitação de Responsabilidade</h2>
-    <p>O App é fornecido "como está". Na máxima extensão permitida por lei, o desenvolvedor não se responsabiliza por danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso ou impossibilidade de uso do App.</p>
+      <h2>7. Propriedade Intelectual</h2>
+      <p>Todos os direitos de propriedade intelectual do App, incluindo textos, imagens, logotipos e código, pertencem ao desenvolvedor. A licença concedida é limitada, não exclusiva e intransferível, para uso pessoal e não comercial.</p>
 
-    <h2>9. Rescisão</h2>
-    <p>O desenvolvedor pode encerrar ou suspender o acesso ao App, com ou sem aviso prévio, em caso de violação destes Termos. Ao encerrar, suas obrigações permanecem vigentes.</p>
+      <h2>8. Limitação de Responsabilidade</h2>
+      <p>O App é fornecido "como está". Na máxima extensão permitida por lei, o desenvolvedor não se responsabiliza por danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso ou impossibilidade de uso do App.</p>
 
-    <h2>10. Alterações</h2>
-    <p>Estes Termos podem ser alterados a qualquer momento. Alterações significativas serão comunicadas por meio do App ou e-mail. O uso continuado após as alterações constitui aceitação dos novos Termos.</p>
+      <h2>9. Rescisão</h2>
+      <p>O desenvolvedor pode encerrar ou suspender o acesso ao App, com ou sem aviso prévio, em caso de violação destes Termos. Ao encerrar, suas obrigações permanecem vigentes.</p>
 
-    <h2>11. Lei Aplicável</h2>
-    <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Questões relativas a compras nas lojas de aplicativos devem seguir as políticas da Apple e do Google.</p>
+      <h2>10. Alterações</h2>
+      <p>Estes Termos podem ser alterados a qualquer momento. Alterações significativas serão comunicadas por meio do App ou e-mail. O uso continuado após as alterações constitui aceitação dos novos Termos.</p>
 
-    <h2>12. Contato</h2>
-    <p>Para dúvidas sobre estes Termos, entre em contato através do App em Configurações ou pelo e-mail informado nas lojas de aplicativos.</p>
-  </section>
+      <h2>11. Lei Aplicável</h2>
+      <p>Estes Termos são regidos pelas leis da República Federativa do Brasil. Questões relativas a compras nas lojas de aplicativos devem seguir as políticas da Apple e do Google.</p>
 
-  <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ddd;">
-  <p><small>Santa Balbúrdia - The Game — Jogo de cartas para entretenimento.</small></p>
+      <h2>12. Contato</h2>
+      <p>Para dúvidas sobre estes Termos, entre em contato através do App em Configurações ou pelo e-mail informado nas lojas de aplicativos.</p>
+    </section>
+
+    <hr>
+    <p class="footer"><small>Santa Balbúrdia - The Game — Jogo de cartas para entretenimento.</small></p>
+  </div>
 </body>
 </html>
