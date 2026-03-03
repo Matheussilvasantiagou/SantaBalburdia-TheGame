@@ -442,6 +442,35 @@
       opacity: 0.9;
     }
 
+    .screens-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.4rem;
+    }
+
+    .screen-card {
+      background: rgba(12, 7, 33, 0.95);
+      border-radius: 18px;
+      padding: 0.8rem 0.8rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      min-width: 140px;
+      text-align: center;
+    }
+
+    .screen-img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
+      margin-bottom: 0.55rem;
+    }
+
+    .screen-caption {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
     .faq-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -775,6 +804,7 @@
       </div>
       <nav class="nav">
         <a href="#como-funciona">Como funciona</a>
+        <a href="#screens">Por dentro do app</a>
         <a href="#destaques">Por que é diferente</a>
         <a href="#premium">Premium</a>
         <a href="#seguranca">Segurança</a>
@@ -831,6 +861,46 @@
             </div>
           </div>
         </aside>
+      </section>
+
+      <section class="section" id="screens">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Interface em ação</p>
+            <h2 class="section-title">Veja como é o app por dentro.</h2>
+          </div>
+          <p class="section-description">
+            Telas pensadas para uso em grupo: fundo roxo característico, botões grandes, textos
+            legíveis no escuro e animações que deixam tudo com cara de jogo de festa.
+          </p>
+        </div>
+
+        <div class="screens-grid">
+          <figure class="screen-card">
+            <img src="assets/home.jpeg" alt="Tela inicial do Santa Balbúrdia mostrando logo e botões de modos de jogo" class="screen-img">
+            <figcaption class="screen-caption">Tela inicial com logo e modos “Resta 1” e “Cartas”.</figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <img src="assets/resta1Menu.jpeg" alt="Tela do modo Resta 1 com opções de 1, 2 ou 3 ganhadores" class="screen-img">
+            <figcaption class="screen-caption">Modo Resta 1 com escolha de 1, 2 ou 3 ganhadores.</figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <img src="assets/resta!.jpeg" alt="Tela escura com círculos coloridos representando os toques na tela" class="screen-img">
+            <figcaption class="screen-caption">Sorteio em tempo real com círculos coloridos na tela.</figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <img src="assets/cardGame.jpeg" alt="Tela de carta revelada com texto de desafio" class="screen-img">
+            <figcaption class="screen-caption">Modo cartas com barra de progresso e carta em destaque.</figcaption>
+          </figure>
+
+          <figure class="screen-card">
+            <img src="assets/cardGameMenu.jpeg" alt="Tela de pacotes de cartas incluindo premium mensal" class="screen-img">
+            <figcaption class="screen-caption">Seleção de pacotes, incluindo packs Premium mensais.</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="section" id="como-funciona">
@@ -1158,15 +1228,14 @@
             <p class="section-kicker">Comece a jogar</p>
             <h2 class="download-copy-title">Pronto para chamar a galera?</h2>
             <p class="download-copy-sub">
-              Assim que o app estiver disponível nas lojas, você vai poder baixar por aqui e testar
-              o modo O Escolhido, os modos de cartas e, se quiser, liberar o Premium para ver até
-              onde o grupo aguenta.
+              Baixe agora no seu iPhone, reúna a galera em volta da tela e teste o modo O Escolhido,
+              os modos de cartas e, se quiser, libere o Premium para ver até onde o grupo aguenta.
             </p>
           </div>
           <div class="store-buttons">
-            <a href="#" class="btn-store" aria-disabled="true">
+            <a href="https://apps.apple.com/br/app/santa-balbúrdia-the-game/id6751453390" class="btn-store">
               <span></span>
-              Em breve na App Store
+              Baixar agora na App Store
             </a>
             <a href="#" class="btn-store" aria-disabled="true">
               <span>▶</span>
