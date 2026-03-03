@@ -4,17 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Santa Balbúrdia - The Game</title>
-  <meta name="description" content="Santa Balbúrdia – The Game é o party game 18+ perfeito para festas, rolês e encontros entre amigos, com modo Resta 1 (O Escolhido) e sistema completo de cartas.">
+  <meta name="description" content="Santa Balbúrdia – The Game é um party game 18+ para animar festas, rolês e encontros entre amigos.">
   <link rel="icon" href="LOGOSBOFICIAL.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Outfit', sans-serif;
@@ -24,28 +20,28 @@
     }
 
     .page {
-      max-width: 960px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 24px 16px 48px;
+      padding: 24px 16px 40px;
     }
 
     .header {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .header-logo {
-      width: 80px;
-      height: 80px;
+      width: 84px;
+      height: 84px;
       border-radius: 999px;
       object-fit: contain;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      margin-bottom: 12px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+      margin-bottom: 10px;
     }
 
     .header-title {
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
 
     .header-subtitle {
@@ -54,53 +50,30 @@
       margin-top: 4px;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 16px;
-      font-size: 0.85rem;
-    }
-
-    .nav a {
-      color: #ffffff;
-      text-decoration: none;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      opacity: 0.9;
-    }
-
-    .nav a:hover {
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.15);
-    }
-
     .hero {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .hero-eyebrow {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: #FFCF4B;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .hero-title {
-      font-size: clamp(2rem, 5vw, 2.7rem);
+      font-size: clamp(1.9rem, 5vw, 2.4rem);
       font-weight: 700;
-      line-height: 1.05;
-      margin-bottom: 12px;
+      line-height: 1.1;
+      margin-bottom: 10px;
     }
 
     .hero-subtitle {
-      font-size: 0.98rem;
-      max-width: 620px;
-      margin: 0 auto 18px;
+      font-size: 0.95rem;
+      max-width: 520px;
+      margin: 0 auto 14px;
       opacity: 0.95;
     }
 
@@ -109,14 +82,14 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 6px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .badge {
       font-size: 0.8rem;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.35);
       background: rgba(0, 0, 0, 0.15);
     }
 
@@ -124,8 +97,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 8px;
+      margin-bottom: 14px;
     }
 
     .btn {
@@ -145,7 +118,7 @@
     .btn-primary {
       background: #FFCF4B;
       color: #2B133F;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
     }
 
     .btn-secondary {
@@ -154,16 +127,16 @@
     }
 
     .hero-note {
-      font-size: 0.85rem;
-      opacity: 0.95;
-      margin-bottom: 20px;
+      font-size: 0.82rem;
+      opacity: 0.9;
+      margin-bottom: 16px;
     }
 
     .hero-screenshot {
-      max-width: 320px;
+      max-width: 300px;
       width: 100%;
       border-radius: 24px;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
       display: block;
       margin: 0 auto;
     }
@@ -171,61 +144,69 @@
     .section {
       background: rgba(15, 4, 40, 0.7);
       border-radius: 18px;
-      padding: 22px 18px 20px;
-      margin-bottom: 18px;
+      padding: 18px 16px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
     .section h2 {
-      font-size: 1.25rem;
-      margin-bottom: 8px;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
     }
 
     .section h3 {
-      font-size: 1rem;
-      margin-top: 14px;
-      margin-bottom: 4px;
+      font-size: 0.98rem;
+      margin-top: 10px;
+      margin-bottom: 2px;
     }
 
     .section p {
-      font-size: 0.92rem;
-      line-height: 1.6;
-      margin: 4px 0;
       opacity: 0.96;
+      margin: 2px 0;
     }
 
     .section ul {
-      margin: 6px 0 4px 18px;
-      font-size: 0.9rem;
-      line-height: 1.6;
+      margin: 4px 0 4px 18px;
       opacity: 0.96;
     }
 
     .screens-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       overflow-x: auto;
       padding-top: 8px;
     }
 
     .screen-item {
-      min-width: 140px;
+      min-width: 130px;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
     }
 
     .screen-item img {
       width: 100%;
       border-radius: 16px;
-      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
       margin-bottom: 4px;
     }
 
     .download-section {
-      background: linear-gradient(135deg, rgba(255, 207, 75, 0.2), rgba(255, 92, 154, 0.25));
+      background: linear-gradient(135deg, rgba(255, 207, 75, 0.22), rgba(255, 92, 154, 0.3));
       border-radius: 20px;
-      padding: 22px 18px 20px;
-      margin-top: 10px;
+      padding: 18px 16px;
       text-align: center;
+      margin-top: 6px;
+    }
+
+    .download-section h2 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .download-section p {
+      font-size: 0.9rem;
+      opacity: 0.95;
     }
 
     .store-buttons {
@@ -233,42 +214,32 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 8px;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     .btn-store {
-      padding: 9px 16px;
+      padding: 8px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.45);
       background: rgba(0, 0, 0, 0.9);
       color: #ffffff;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
     }
 
     .btn-store span {
       font-size: 1.15rem;
     }
 
-    .faq-item {
-      margin-top: 12px;
-    }
-
-    .faq-item strong {
-      display: block;
-      margin-bottom: 2px;
-      font-size: 0.95rem;
-    }
-
     .footer {
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, 0.25);
-      font-size: 0.8rem;
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 0.78rem;
       text-align: center;
       opacity: 0.9;
     }
@@ -277,12 +248,6 @@
       color: #ffffff;
       text-decoration: underline;
     }
-
-    @media (min-width: 768px) {
-      .section {
-        padding: 26px 26px 22px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -290,177 +255,110 @@
     <header class="header">
       <img src="./LOGOSBOFICIAL.png" alt="Santa Balbúrdia - The Game" class="header-logo">
       <div class="header-title">Santa Balbúrdia – The Game</div>
-      <div class="header-subtitle">Party game 18+ para festas, rolês e encontros entre amigos.</div>
-      <nav class="nav">
-        <a href="#sobre">Sobre o app</a>
-        <a href="#modos">Modos de jogo</a>
-        <a href="#premium">Premium</a>
-        <a href="#seguranca">Segurança</a>
-        <a href="#faq">FAQ</a>
-        <a href="#download">Baixar</a>
-      </nav>
+      <div class="header-subtitle">Party game 18+ para animar qualquer rolê.</div>
     </header>
 
     <main>
       <section class="hero" id="top">
-        <div class="hero-eyebrow">Party game 18+ para iPhone</div>
-        <h1 class="hero-title">O app que decide quem vai encarar a próxima rodada.</h1>
+        <div class="hero-eyebrow">Jogo de festa para iPhone</div>
+        <h1 class="hero-title">Um celular no meio da mesa. Todo mundo jogando junto.</h1>
         <p class="hero-subtitle">
-          Santa Balbúrdia – The Game é um jogo de festa para jogar PRESENCIALMENTE, com todo mundo
-          em volta do celular. Perfeito para festas, pré-balada e encontros em que a missão é rir
-          alto e criar histórias caóticas.
+          Santa Balbúrdia – The Game é um app para jogar PRESENCIALMENTE com amigos:
+          dedos na tela, cartas na tela e muita zoeira na mesma roda.
         </p>
         <div class="hero-badges">
-          <span class="badge">Resta 1 (O Escolhido) com multi-toque</span>
-          <span class="badge">Modo cartas, incluindo Eu Nunca</span>
-          <span class="badge">Cartas seguras e +18, você escolhe</span>
+          <span class="badge">Resta 1 (O Escolhido)</span>
+          <span class="badge">Cartas de festa e Eu Nunca</span>
+          <span class="badge">Conteúdo 18+ opcional</span>
         </div>
         <div class="hero-buttons">
           <a class="btn btn-primary" href="#download">Baixar agora</a>
-          <a class="btn btn-secondary" href="#modos">Ver como funciona</a>
+          <a class="btn btn-secondary" href="#modos">Ver modos de jogo</a>
         </div>
         <p class="hero-note">
-          Sem regras complicadas: é abrir o app, juntar a galera e deixar a balbúrdia acontecer.
+          Sem regras complicadas: abra o app, junte a galera e deixe o sorteio e as cartas decidirem o resto.
         </p>
         <img src="assets/home.jpeg" alt="Tela inicial do Santa Balbúrdia mostrando logo e botões de modos de jogo"
              class="hero-screenshot">
       </section>
 
-      <section id="sobre" class="section">
-        <h2>Sobre o app</h2>
-        <p>
-          Santa Balbúrdia – The Game é um party game 18+ feito para ser usado em grupo, com
-          <strong>um celular no centro da roda</strong>. Nada de cada um no seu aparelho: a graça é
-          todo mundo ver e reagir junto.
-        </p>
-        <p>
-          Você escolhe se quer jogar com cartas seguras, com conteúdo +18 ou misturar as duas
-          coisas. O app também oferece assinatura Premium com pacotes extras de cartas, incluindo
-          packs mensais sempre renovando o jogo.
-        </p>
-      </section>
-
       <section id="modos" class="section">
-        <h2>Modos de jogo</h2>
+        <h2>O que dá pra fazer no app</h2>
 
         <h3>Resta 1 (O Escolhido)</h3>
         <p>
-          Todo mundo coloca o dedo na tela ao mesmo tempo. Depois de alguns segundos de suspense,
-          com vibração e animações, o app escolhe quem vai encarar a próxima.
+          Todo mundo coloca o dedo na tela. O app faz suspense e escolhe quem vai encarar a próxima:
+          pagar a rodada, começar o jogo, cumprir o desafio… vocês decidem.
         </p>
-        <ul>
-          <li>Até cerca de 6 dedos na tela ao mesmo tempo.</li>
-          <li>Defina se quer 1, 2 ou 3 escolhidos por rodada.</li>
-          <li>Círculos coloridos para cada jogador, com destaques especiais para os escolhidos.</li>
-          <li>Perfeito para decidir quem começa o jogo, quem paga a próxima rodada ou quem cumpre
-            o desafio mais absurdo.</li>
-        </ul>
 
-        <h3>Cartas de festa (incluindo Eu Nunca)</h3>
+        <h3>Cartas de festa</h3>
         <p>
-          Use o app como um baralho infinito de cartas para jogos de festa. Inclui modo dedicado
-          para <strong>Eu Nunca</strong> e outros tipos de desafios.
+          Use o app como baralho: cartas de desafios, inclusive um modo “Eu Nunca” pronto para jogar.
+          Tem cartas seguras e cartas +18 — você escolhe o tom do rolê.
         </p>
-        <ul>
-          <li>Cartas seguras e cartas +18, separadas por filtros.</li>
-          <li>Cartas próprias para Eu Nunca, com tela de boas-vindas explicando o modo.</li>
-          <li>Crie suas próprias cartas, marcando se são Eu Nunca e se têm conteúdo adulto.</li>
-          <li>Tela de ver cartas com busca, filtros e ordenação.</li>
-          <li>Durante o jogo: barra de progresso, cartas animadas e botões grandes para próxima,
-            anterior e reset.</li>
-        </ul>
 
         <div class="screens-row" aria-label="Telas do app">
           <div class="screen-item">
             <img src="assets/resta1Menu.jpeg" alt="Menu do modo Resta 1 com opções de ganhadores">
-            <div>Opções de ganhadores no Resta 1.</div>
+            <div>Escolha 1, 2 ou 3 escolhidos.</div>
           </div>
           <div class="screen-item">
             <img src="assets/resta!.jpeg" alt="Tela escura com círculos coloridos representando os toques na tela">
-            <div>Sorteio com círculos coloridos na tela.</div>
+            <div>Sorteio com círculos coloridos.</div>
           </div>
           <div class="screen-item">
             <img src="assets/cardGame.jpeg" alt="Tela de carta revelada com texto de desafio">
-            <div>Cartas com barra de progresso e animações.</div>
+            <div>Cartas grandes e legíveis.</div>
           </div>
           <div class="screen-item">
             <img src="assets/cardGameMenu.jpeg" alt="Tela de pacotes de cartas incluindo premium mensal">
-            <div>Seleção de pacotes, incluindo packs Premium mensais.</div>
+            <div>Pacotes grátis e Premium.</div>
           </div>
         </div>
       </section>
 
       <section id="premium" class="section">
-        <h2>Versão Premium</h2>
+        <h2>Premium sem complicação</h2>
         <p>
-          A versão gratuita já garante muita risada. A assinatura Premium é para quem quer levar
-          o rolê a outro nível.
+          Dá para brincar bastante de graça. Se o grupo curtir, a assinatura Premium libera
+          mais cartas, temas especiais e packs que mudam com o tempo.
         </p>
-        <ul>
-          <li>Pacotes extras de cartas com temas especiais.</li>
-          <li>Conteúdo +18 mais intenso para grupos que curtem ir além.</li>
-          <li>Packs Premium rotativos: todo mês um pacote diferente é liberado.</li>
-          <li>Assinatura gerenciada pela App Store / Google Play, com cancelamento a qualquer momento.</li>
-        </ul>
         <p>
-          Se você criar uma conta (e-mail/senha, Google ou Apple), sua assinatura e preferências
-          podem ser sincronizadas entre dispositivos.
+          A assinatura é feita pela App Store / Google Play e pode ser cancelada a qualquer momento.
         </p>
       </section>
 
       <section id="seguranca" class="section">
-        <h2>Segurança e privacidade</h2>
+        <h2>18+ e privacidade</h2>
         <p>
-          Santa Balbúrdia – The Game é um app <strong>destinado a maiores de 18 anos</strong>.
-          É um jogo de cartas para entretenimento entre adultos e não incentiva comportamentos
-          ilegais ou o uso irresponsável de álcool e outras substâncias.
+          Santa Balbúrdia – The Game é um app para maiores de 18 anos. É um jogo de cartas para
+          entretenimento entre adultos e <strong>não incentiva comportamentos ilegais</strong>.
         </p>
-        <ul>
-          <li>Você escolhe se quer jogar apenas com cartas seguras ou incluir cartas +18.</li>
-          <li>Seção de segurança no app explicando como usar Tempo de Uso / Screen Time (iOS) e
-            controles parentais do Android para limitar o acesso por menores.</li>
-          <li>Política de Privacidade alinhada à LGPD e Termos de Uso (EULA) disponíveis para
-            consulta.</li>
-        </ul>
         <p>
-          Veja mais detalhes em
+          Você pode desativar cartas +18 e jogar só com cartas seguras. E, se quiser limitar o uso
+          por menores, é só usar Tempo de Uso / Screen Time (iOS) ou os controles parentais do Android.
+        </p>
+        <p>
+          Detalhes completos estão em
           <a href="politica-e-termos.html" style="color:#FFCF4B; text-decoration:underline;">Política de Privacidade e Termos de Uso</a>.
         </p>
       </section>
 
       <section id="faq" class="section">
-        <h2>FAQ rápido</h2>
+        <h2>Perguntas rápidas</h2>
 
-        <div class="faq-item">
-          <strong>O app é gratuito?</strong>
-          <p>Sim. Você pode baixar e jogar de graça com o modo Resta 1 e pacotes básicos de cartas.
-            A versão Premium é opcional.</p>
-        </div>
+        <p><strong>É de graça?</strong><br>
+          Sim. O app tem modos gratuitos. A versão Premium só é necessária se você quiser mais cartas e conteúdos extras.</p>
 
-        <div class="faq-item">
-          <strong>O que eu ganho com a versão Premium?</strong>
-          <p>Mais cartas (incluindo conteúdos +18 mais intensos), pacotes temáticos que mudam todo
-            mês e um jogo que está sempre renovado.</p>
-        </div>
-
-        <div class="faq-item">
-          <strong>Preciso de conta para jogar?</strong>
-          <p>Não. Você pode jogar sem criar conta. O login é útil para sincronizar assinatura,
-            preferências e cartas criadas entre dispositivos.</p>
-        </div>
-
-        <div class="faq-item">
-          <strong>É realmente 18+? Dá pra jogar com qualquer grupo?</strong>
-          <p>O app é pensado para adultos, mas você pode desativar as cartas +18 e usar apenas
-            cartas seguras, adaptando o tom ao tipo de grupo.</p>
-        </div>
+        <p><strong>Precisa de conta?</strong><br>
+          Não. Você pode jogar direto. Criar conta só ajuda a sincronizar assinatura e preferências entre dispositivos.</p>
       </section>
 
       <section id="download" class="download-section">
         <h2>Baixe o Santa Balbúrdia – The Game</h2>
         <p>
-          Baixe agora no seu iPhone, reúna a galera em volta da tela e teste o modo Resta 1,
-          os modos de cartas e, se quiser, libere o Premium para ver até onde o grupo aguenta.
+          Baixe no seu iPhone, coloque o celular no meio da mesa e deixe o app decidir quem vai ser
+          o próximo alvo da balbúrdia.
         </p>
         <div class="store-buttons">
           <a href="https://apps.apple.com/br/app/santa-balbúrdia-the-game/id6751453390" class="btn-store">
@@ -476,8 +374,7 @@
     </main>
 
     <footer class="footer">
-      Santa Balbúrdia - The Game é um jogo de cartas para entretenimento entre adultos (18+). Não incentiva
-      comportamentos ilegais nem o uso irresponsável de álcool ou outras substâncias.
+      Santa Balbúrdia - The Game é um jogo de cartas para entretenimento entre adultos (18+).
       <br>
       <a href="politica-e-termos.html">Política de Privacidade e Termos de Uso (EULA)</a>
     </footer>
