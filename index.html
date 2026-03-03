@@ -4,96 +4,845 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Santa Balbúrdia - The Game</title>
+  <meta name="description" content="Santa Balbúrdia - The Game é um jogo de cartas para festas, perfeito para quebrar o gelo e criar histórias caóticas entre amigos.">
   <link rel="icon" href="LOGOSBOFICIAL.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --purple: #5F2E8E;
+      --purple-dark: #2B133F;
+      --yellow: #FFCF4B;
+      --pink: #FF5C9A;
+      --card-bg: rgba(16, 8, 35, 0.6);
+      --border-soft: rgba(255, 255, 255, 0.12);
+      --text-main: #ffffff;
+    }
+
     body {
       font-family: 'Outfit', sans-serif;
       min-height: 100vh;
-      background: #5F2E8E;
-      color: #ffffff;
+      background:
+        radial-gradient(circle at top left, #FF5C9A33, transparent 55%),
+        radial-gradient(circle at bottom right, #FFCF4B33, transparent 55%),
+        linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: var(--text-main);
+      padding: 0 1.5rem 3rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
+    }
+
+    .top-bar {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    body::before { display: none; }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 24px;
-      padding: 2.5rem 2.5rem 3rem;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
-      position: relative;
-      animation: fadeUp 0.6s ease-out;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(to bottom,
+        rgba(13, 9, 33, 0.96),
+        rgba(13, 9, 33, 0.8),
+        transparent);
+      backdrop-filter: blur(18px);
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .logo {
-      width: 100%;
-      max-width: 280px;
-      height: auto;
-      margin: 0 auto 1.5rem;
-      display: block;
-      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      object-fit: contain;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
     }
 
-    .title {
-      font-size: 1.75rem;
+    .brand-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
       font-weight: 700;
-      color: #ffffff;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-tagline {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      opacity: 0.85;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 2.5rem;
+      padding: 2rem 0 3rem;
+    }
+
+    .hero-copy-eyebrow {
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--yellow);
       margin-bottom: 0.5rem;
     }
 
-    .subtitle {
-      font-size: 1rem;
-      color: #ffffff;
-      margin-bottom: 2rem;
-      font-weight: 400;
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1rem;
     }
 
-    .cta {
-      display: inline-block;
-      padding: 1rem 2rem;
-      background: rgba(255, 255, 255, 0.2);
-      color: #ffffff;
-      border: 2px solid #ffffff;
-      text-decoration: none;
+    .hero-highlight {
+      background: linear-gradient(120deg, var(--yellow), #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      max-width: 460px;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .badge {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(13, 9, 33, 0.65);
+    }
+
+    .badge.hot {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--pink), var(--yellow));
+      color: #120817;
       font-weight: 600;
-      font-size: 1rem;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     }
 
-    .cta:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.3);
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--yellow), #ffffff);
+      color: #1a1024;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-ghost {
+      background: rgba(13, 9, 33, 0.75);
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-note {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 1.75rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255, 207, 75, 0.25), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 92, 154, 0.2), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo {
+      width: 100%;
+      max-width: 280px;
+      display: block;
+      margin: 0 auto 1rem;
+      filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.7));
+    }
+
+    .hero-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta span {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(13, 9, 33, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.32);
+      padding-top: 0.8rem;
+      margin-top: 0.4rem;
+      opacity: 0.95;
+    }
+
+    .hero-rating-stars {
+      color: var(--yellow);
+      font-size: 1.05rem;
+    }
+
+    .hero-rating-tag {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.45);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .section-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+    }
+
+    .section-description {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 520px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card-feature {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    .card-feature-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .card-feature-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-feature-text {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .step {
+      background: radial-gradient(circle at top left, rgba(255, 207, 75, 0.12), rgba(20, 10, 40, 0.95));
+      border-radius: 18px;
+      padding: 1.3rem 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+    }
+
+    .step-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-text {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .audience {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .audience-card {
+      background: rgba(12, 7, 33, 0.95);
+      border-radius: 18px;
+      padding: 1.2rem 1.3rem;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    .audience-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.85;
+      margin-bottom: 0.35rem;
+    }
+
+    .audience-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+    }
+
+    .audience-text {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .faq-item {
+      background: rgba(13, 9, 33, 0.9);
+      border-radius: 16px;
+      padding: 1.2rem 1.3rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .faq-question {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .faq-answer {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .download-section {
+      background: linear-gradient(135deg, rgba(255, 207, 75, 0.16), rgba(255, 92, 154, 0.16));
+      border-radius: 22px;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+    }
+
+    .download-copy-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .download-copy-sub {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .store-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .btn-store {
+      padding: 0.75rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.85);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-store span {
+      font-size: 1.15rem;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 1.5rem;
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.9rem;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    .footer a {
+      color: var(--text-main);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+    }
+
+    .footer a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .top-bar {
+        position: static;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .cards-grid,
+      .steps,
+      .audience,
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding-inline: 1.1rem;
+      }
+
+      .page {
+        padding-top: 0.5rem;
+      }
+
+      .hero {
+        padding-top: 1.5rem;
+      }
+
+      .download-section {
+        padding: 1.4rem 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="./LOGOSBOFICIAL.png" alt="Santa Balbúrdia - The Game" class="logo">
-    <h1 class="title">Santa Balbúrdia</h1>
-    <p class="subtitle">The Game — Jogo de cartas para entretenimento</p>
-    <a href="politica-e-termos.html" class="cta">Política de Privacidade e Termos de Uso</a>
+  <div class="page">
+    <header class="top-bar">
+      <div class="brand">
+        <img src="./LOGOSBOFICIAL.png" alt="Santa Balbúrdia - The Game" class="brand-logo">
+        <div class="brand-title">
+          <span class="brand-name">Santa Balbúrdia</span>
+          <span class="brand-tagline">The Game • Jogo de cartas</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#como-jogar">Como jogar</a>
+        <a href="#destaques">Destaques</a>
+        <a href="#para-quem">Para quem é</a>
+        <a href="#faq">FAQ</a>
+        <a href="#download">Baixar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="hero-copy-eyebrow">Jogo de cartas para festas</p>
+          <h1 class="hero-title">
+            Transforme qualquer encontro em
+            <span class="hero-highlight">histórias caóticas e inesquecíveis.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Santa Balbúrdia - The Game é o jogo de cartas perfeito para quebrar o gelo,
+            rir alto e criar momentos épicos entre amigos.
+          </p>
+
+          <div class="hero-badges">
+            <span class="badge hot">Novo jogo de festa</span>
+            <span class="badge">Ideal para 3 a 10 pessoas</span>
+            <span class="badge">Partidas rápidas e dinâmicas</span>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#download" class="btn btn-primary">Quero jogar agora</a>
+            <a href="#como-jogar" class="btn btn-ghost">Ver como funciona</a>
+          </div>
+
+          <p class="hero-note">
+            Sem preparo, sem regras complicadas. Só abrir o jogo, reunir a galera e começar a balbúrdia.
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumo do jogo">
+          <div class="hero-card-inner">
+            <img src="./LOGOSBOFICIAL.png" alt="Logo Santa Balbúrdia - The Game" class="hero-logo">
+            <p class="hero-card-title">Santa Balbúrdia - The Game</p>
+            <div class="hero-meta">
+              <span>+18 • Conteúdo adulto</span>
+              <span>Tempo médio: 20–40 min</span>
+              <span>Perfeito para festas</span>
+            </div>
+            <div class="hero-rating">
+              <div>
+                <div class="hero-rating-stars">★★★★★</div>
+                <div style="font-size: 0.8rem; opacity: 0.9;">Pensado para gerar boas histórias entre amigos.</div>
+              </div>
+              <span class="hero-rating-tag">Party game</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="destaques">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Por que a galera curte</p>
+            <h2 class="section-title">Feito para rir, sem complicação.</h2>
+          </div>
+          <p class="section-description">
+            Cada carta foi pensada para estimular situações absurdas, respostas criativas e histórias
+            que vão ser lembradas muito depois da festa acabar.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card-feature">
+            <div class="card-feature-icon">🎉</div>
+            <h3 class="card-feature-title">Clima de festa garantido</h3>
+            <p class="card-feature-text">
+              Mecânica rápida, linguagem despojada e cartas pensadas para tirar qualquer grupo
+              da zona de conforto em poucos minutos.
+            </p>
+          </article>
+
+          <article class="card-feature">
+            <div class="card-feature-icon">🃏</div>
+            <h3 class="card-feature-title">Rejogável de verdade</h3>
+            <p class="card-feature-text">
+              Combinações diferentes a cada rodada fazem com que nenhuma partida seja igual à outra,
+              mesmo com a mesma galera.
+            </p>
+          </article>
+
+          <article class="card-feature">
+            <div class="card-feature-icon">✨</div>
+            <h3 class="card-feature-title">Conteúdo adulto, mas leve</h3>
+            <p class="card-feature-text">
+              Humor ousado, mas sempre voltado para entretenimento entre adultos, sem perder o respeito
+              e o bom senso.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="como-jogar">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Em poucos passos</p>
+            <h2 class="section-title">Como funciona o Santa Balbúrdia.</h2>
+          </div>
+          <p class="section-description">
+            As regras são simples para ninguém travar: o foco é interagir, improvisar e se divertir.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">1</span>
+            <h3 class="step-title">Reúna a galera</h3>
+            <p class="step-text">
+              Chame amigos que curtam jogos de festa, humor ácido e situações fora do comum.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">2</span>
+            <h3 class="step-title">Combinem os limites</h3>
+            <p class="step-text">
+              O jogo é para adultos. Antes de começar, alinhem o tom das piadas e o que todo mundo
+              está confortável em jogar.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-number">3</span>
+            <h3 class="step-title">Deixem a balbúrdia rolar</h3>
+            <p class="step-text">
+              Virem cartas, respondam, votem nas respostas favoritas e vejam a história da noite
+              ficar cada vez mais caótica.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="para-quem">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Para quais momentos</p>
+            <h2 class="section-title">Perfeito para esses tipos de rolê.</h2>
+          </div>
+        </div>
+
+        <div class="audience">
+          <article class="audience-card">
+            <p class="audience-label">Entre amigos</p>
+            <h3 class="audience-title">Noite em casa</h3>
+            <p class="audience-text">
+              Quando a galera quer algo além de filme e streaming. Ideal para acompanhar snacks,
+              drinks e muita risada.
+            </p>
+          </article>
+
+          <article class="audience-card">
+            <p class="audience-label">Clima de festa</p>
+            <h3 class="audience-title">Pré-balada</h3>
+            <p class="audience-text">
+              Quebre o gelo antes de sair. Em poucos minutos todo mundo já está falando alto,
+              debatendo e fazendo piada.
+            </p>
+          </article>
+
+          <article class="audience-card">
+            <p class="audience-label">Novos grupos</p>
+            <h3 class="audience-title">Galera que ainda não se conhece</h3>
+            <p class="audience-text">
+              Use o jogo para integrar pessoas novas no grupo de forma leve, divertida e sem perguntas
+              constrangedoras diretas.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-header">
+          <div>
+            <p class="section-kicker">Perguntas frequentes</p>
+            <h2 class="section-title">Antes de começar a bagunça.</h2>
+          </div>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3 class="faq-question">Qual é a idade recomendada?</h3>
+            <p class="faq-answer">
+              O conteúdo é voltado para maiores de 18 anos, com linguagem adulta e temas que fazem
+              mais sentido para esse público.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Quantas pessoas podem jogar?</h3>
+            <p class="faq-answer">
+              A experiência ideal é entre 3 e 10 jogadores, mas você pode adaptar para grupos maiores,
+              dividindo em times.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Precisa de preparo antes de jogar?</h3>
+            <p class="faq-answer">
+              Não. As regras são simples e explicáveis em poucos minutos. O foco é na interação, não
+              em decorar manual.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3 class="faq-question">Onde vejo privacidade e termos?</h3>
+            <p class="faq-answer">
+              Você pode acessar a nossa Política de Privacidade e os Termos de Uso
+              clicando no link no rodapé desta página.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="download">
+        <div class="download-section">
+          <div>
+            <p class="section-kicker">Comece a jogar</p>
+            <h2 class="download-copy-title">Pronto para chamar a galera?</h2>
+            <p class="download-copy-sub">
+              Assim que o jogo estiver disponível nas lojas, você poderá baixar por aqui.
+              Enquanto isso, salve esta página ou compartilhe com quem vai jogar com você.
+            </p>
+          </div>
+          <div class="store-buttons">
+            <a href="#" class="btn-store" aria-disabled="true">
+              <span></span>
+              Em breve na App Store
+            </a>
+            <a href="#" class="btn-store" aria-disabled="true">
+              <span>▶</span>
+              Em breve no Google Play
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Santa Balbúrdia - The Game • Jogo de cartas para entretenimento entre adultos.</span>
+      <a href="politica-e-termos.html">Política de Privacidade e Termos de Uso</a>
+    </footer>
   </div>
 </body>
 </html>
