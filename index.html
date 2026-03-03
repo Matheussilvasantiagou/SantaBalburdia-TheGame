@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Santa Balbúrdia - The Game</title>
-  <meta name="description" content="Santa Balbúrdia – The Game é o party game 18+ perfeito para festas, rolês e encontros entre amigos, com modo O Escolhido e sistema completo de cartas.">
+  <meta name="description" content="Santa Balbúrdia – The Game é o party game 18+ perfeito para festas, rolês e encontros entre amigos, com modo Resta 1 (O Escolhido) e sistema completo de cartas.">
   <link rel="icon" href="LOGOSBOFICIAL.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,796 +16,284 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --purple: #5F2E8E;
-      --purple-dark: #2B133F;
-      --yellow: #FFCF4B;
-      --pink: #FF5C9A;
-      --card-bg: rgba(16, 8, 35, 0.6);
-      --border-soft: rgba(255, 255, 255, 0.12);
-      --text-main: #ffffff;
-    }
-
     body {
       font-family: 'Outfit', sans-serif;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top left, #FF5C9A33, transparent 55%),
-        radial-gradient(circle at bottom right, #FFCF4B33, transparent 55%),
-        linear-gradient(135deg, var(--purple), var(--purple-dark));
-      color: var(--text-main);
-      padding: 0 1.5rem 3rem;
+      background: #5F2E8E;
+      color: #ffffff;
       -webkit-font-smoothing: antialiased;
     }
 
     .page {
-      max-width: 1120px;
+      max-width: 960px;
       margin: 0 auto;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      padding: 24px 16px 48px;
     }
 
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: linear-gradient(to bottom,
-        rgba(13, 9, 33, 0.96),
-        rgba(13, 9, 33, 0.8),
-        transparent);
-      backdrop-filter: blur(18px);
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+    .header-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 999px;
       object-fit: contain;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      margin-bottom: 12px;
     }
 
-    .brand-title {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
-
-    .brand-name {
+    .header-title {
       font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: 0.02em;
+      font-size: 1.3rem;
     }
 
-    .brand-tagline {
-      font-size: 0.85rem;
-      opacity: 0.85;
+    .header-subtitle {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 4px;
     }
 
     .nav {
       display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      font-size: 0.95rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-size: 0.85rem;
     }
 
     .nav a {
-      color: var(--text-main);
+      color: #ffffff;
       text-decoration: none;
-      opacity: 0.85;
-      padding: 0.4rem 0.75rem;
+      padding: 4px 10px;
       border-radius: 999px;
-      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      opacity: 0.9;
     }
 
     .nav a:hover {
       opacity: 1;
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(0, 0, 0, 0.15);
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      align-items: center;
-      gap: 2.5rem;
-      padding: 2rem 0 3rem;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
-    .hero-copy-eyebrow {
-      font-size: 0.9rem;
-      font-weight: 500;
+    .hero-eyebrow {
+      font-size: 0.85rem;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--yellow);
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.16em;
+      color: #FFCF4B;
+      margin-bottom: 8px;
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      font-size: clamp(2rem, 5vw, 2.7rem);
       font-weight: 700;
       line-height: 1.05;
-      margin-bottom: 1rem;
-    }
-
-    .hero-highlight {
-      background: linear-gradient(120deg, var(--yellow), #ffffff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      margin-bottom: 12px;
     }
 
     .hero-subtitle {
-      font-size: 1.05rem;
-      max-width: 460px;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+      max-width: 620px;
+      margin: 0 auto 18px;
+      opacity: 0.95;
     }
 
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 18px;
     }
 
     .badge {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+      padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(13, 9, 33, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      background: rgba(0, 0, 0, 0.15);
     }
 
-    .badge.hot {
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--pink), var(--yellow));
-      color: #120817;
-      font-weight: 600;
-    }
-
-    .hero-ctas {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-      margin-bottom: 1.25rem;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
-      padding: 0.85rem 1.6rem;
+      padding: 10px 20px;
       border-radius: 999px;
       font-size: 0.95rem;
       font-weight: 600;
       text-decoration: none;
-      border: 1px solid transparent;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+      border: none;
       cursor: pointer;
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--yellow), #ffffff);
-      color: #1a1024;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+      background: #FFCF4B;
+      color: #2B133F;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
-    }
-
-    .btn-ghost {
-      background: rgba(13, 9, 33, 0.75);
-      color: var(--text-main);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(255, 255, 255, 0.1);
+    .btn-secondary {
+      background: rgba(0, 0, 0, 0.2);
+      color: #ffffff;
     }
 
     .hero-note {
       font-size: 0.85rem;
-      opacity: 0.85;
-    }
-
-    .hero-card {
-      background: var(--card-bg);
-      border-radius: 24px;
-      padding: 1.75rem;
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(255, 207, 75, 0.25), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(255, 92, 154, 0.2), transparent 60%);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-logo {
-      width: 100%;
-      max-width: 280px;
-      display: block;
-      margin: 0 auto 1rem;
-      filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.7));
-    }
-
-    .hero-card-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-align: center;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      opacity: 0.9;
-      margin-bottom: 1rem;
-    }
-
-    .hero-meta span {
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(13, 9, 33, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    .hero-rating {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      border-top: 1px dashed rgba(255, 255, 255, 0.32);
-      padding-top: 0.8rem;
-      margin-top: 0.4rem;
       opacity: 0.95;
+      margin-bottom: 20px;
     }
 
-    .hero-rating-stars {
-      color: var(--yellow);
-      font-size: 1.05rem;
-    }
-
-    .hero-rating-tag {
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.45);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+    .hero-screenshot {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+      display: block;
+      margin: 0 auto;
     }
 
     .section {
-      margin-bottom: 3rem;
-    }
-
-    .section-header {
-      margin-bottom: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .section-kicker {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      opacity: 0.8;
-    }
-
-    .section-description {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      max-width: 520px;
-    }
-
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.2rem;
-    }
-
-    .card-feature {
-      background: var(--card-bg);
+      background: rgba(15, 4, 40, 0.7);
       border-radius: 18px;
-      padding: 1.3rem 1.4rem;
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+      padding: 22px 18px 20px;
+      margin-bottom: 18px;
     }
 
-    .card-feature-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      margin-bottom: 0.7rem;
-      background: rgba(255, 255, 255, 0.12);
+    .section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
     }
 
-    .card-feature-title {
+    .section h3 {
       font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-top: 14px;
+      margin-bottom: 4px;
     }
 
-    .card-feature-text {
+    .section p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin: 4px 0;
+      opacity: 0.96;
+    }
+
+    .section ul {
+      margin: 6px 0 4px 18px;
       font-size: 0.9rem;
-      opacity: 0.9;
+      line-height: 1.6;
+      opacity: 0.96;
     }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .step {
-      background: radial-gradient(circle at top left, rgba(255, 207, 75, 0.12), rgba(20, 10, 40, 0.95));
-      border-radius: 18px;
-      padding: 1.3rem 1.4rem;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-    }
-
-    .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.65);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      margin-bottom: 0.5rem;
-      opacity: 0.95;
-    }
-
-    .step-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .step-text {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .audience {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .audience-card {
-      background: rgba(12, 7, 33, 0.95);
-      border-radius: 18px;
-      padding: 1.2rem 1.3rem;
-      border: 1px dashed rgba(255, 255, 255, 0.3);
-    }
-
-    .audience-label {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      opacity: 0.85;
-      margin-bottom: 0.35rem;
-    }
-
-    .audience-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.45rem;
-    }
-
-    .audience-text {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .screens-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1rem;
+    .screens-row {
+      display: flex;
+      gap: 10px;
       overflow-x: auto;
-      padding-bottom: 0.4rem;
+      padding-top: 8px;
     }
 
-    .screen-card {
-      background: rgba(12, 7, 33, 0.95);
-      border-radius: 18px;
-      padding: 0.8rem 0.8rem 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.18);
+    .screen-item {
       min-width: 140px;
       text-align: center;
+      font-size: 0.8rem;
     }
 
-    .screen-img {
+    .screen-item img {
       width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7);
-      margin-bottom: 0.55rem;
-    }
-
-    .screen-caption {
-      font-size: 0.8rem;
-      opacity: 0.9;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .faq-item {
-      background: rgba(13, 9, 33, 0.9);
       border-radius: 16px;
-      padding: 1.2rem 1.3rem;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-    }
-
-    .faq-question {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-
-    .faq-answer {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .tag-18 {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.78rem;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2rem;
-    }
-
-    .two-column-stack {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 1rem;
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
-
-    .pill {
-      font-size: 0.78rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      background: rgba(13, 9, 33, 0.75);
-    }
-
-    .mode-card {
-      background: var(--card-bg);
-      border-radius: 18px;
-      padding: 1.2rem 1.4rem;
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
-    }
-
-    .mode-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      opacity: 0.9;
-      margin-bottom: 0.3rem;
-    }
-
-    .mode-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.45rem;
-    }
-
-    .mode-text {
-      font-size: 0.9rem;
-      opacity: 0.9;
-      margin-bottom: 0.7rem;
-    }
-
-    .mode-list {
-      font-size: 0.88rem;
-      opacity: 0.9;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .mode-list li {
-      margin-bottom: 0.3rem;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .mode-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      opacity: 0.7;
-    }
-
-    .premium-banner {
-      background: linear-gradient(135deg, rgba(255, 207, 75, 0.24), rgba(255, 92, 154, 0.24));
-      border-radius: 20px;
-      padding: 1.4rem 1.6rem;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-      gap: 1.5rem;
-      align-items: center;
-      margin-top: 1.5rem;
-    }
-
-    .premium-badge {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 0.3rem;
-    }
-
-    .premium-note {
-      font-size: 0.86rem;
-      opacity: 0.95;
-      margin-top: 0.4rem;
-    }
-
-    .compare {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem;
-      font-size: 0.85rem;
-    }
-
-    .compare-col {
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 14px;
-      padding: 0.9rem 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .compare-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .legal-box {
-      background: rgba(8, 5, 24, 0.9);
-      border-radius: 18px;
-      padding: 1.3rem 1.4rem;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      font-size: 0.88rem;
-    }
-
-    .legal-box h3 {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .login-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 1.6rem;
-    }
-
-    .login-list {
-      list-style: none;
-      padding-left: 0;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .login-list li {
-      margin-bottom: 0.3rem;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .login-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      opacity: 0.7;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
+      margin-bottom: 4px;
     }
 
     .download-section {
-      background: linear-gradient(135deg, rgba(255, 207, 75, 0.16), rgba(255, 92, 154, 0.16));
-      border-radius: 22px;
-      padding: 1.6rem 1.8rem;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.2rem;
-    }
-
-    .download-copy-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .download-copy-sub {
-      font-size: 0.9rem;
-      opacity: 0.9;
+      background: linear-gradient(135deg, rgba(255, 207, 75, 0.2), rgba(255, 92, 154, 0.25));
+      border-radius: 20px;
+      padding: 22px 18px 20px;
+      margin-top: 10px;
+      text-align: center;
     }
 
     .store-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
     }
 
     .btn-store {
-      padding: 0.75rem 1.3rem;
+      padding: 9px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-      background: rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.9);
       color: #ffffff;
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-size: 0.86rem;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      gap: 6px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.7);
     }
 
     .btn-store span {
       font-size: 1.15rem;
     }
 
+    .faq-item {
+      margin-top: 12px;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 0.95rem;
+    }
+
     .footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-      padding-top: 1.5rem;
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.9rem;
-      font-size: 0.85rem;
-      opacity: 0.85;
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      font-size: 0.8rem;
+      text-align: center;
+      opacity: 0.9;
     }
 
     .footer a {
-      color: var(--text-main);
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+      color: #ffffff;
+      text-decoration: underline;
     }
 
-    .footer a:hover {
-      opacity: 1;
-    }
-
-    @media (max-width: 900px) {
-      .top-bar {
-        position: static;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-card {
-        order: -1;
-      }
-
-      .cards-grid,
-      .steps,
-      .audience,
-      .faq-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .two-column,
-      .premium-banner,
-      .login-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding-inline: 1.1rem;
-      }
-
-      .page {
-        padding-top: 0.5rem;
-      }
-
-      .hero {
-        padding-top: 1.5rem;
-      }
-
-      .download-section {
-        padding: 1.4rem 1.3rem;
+    @media (min-width: 768px) {
+      .section {
+        padding: 26px 26px 22px;
       }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header class="top-bar">
-      <div class="brand">
-        <img src="./LOGOSBOFICIAL.png" alt="Santa Balbúrdia - The Game" class="brand-logo">
-        <div class="brand-title">
-          <span class="brand-name">Santa Balbúrdia</span>
-          <span class="brand-tagline">The Game • Party game mobile</span>
-        </div>
-      </div>
+    <header class="header">
+      <img src="./LOGOSBOFICIAL.png" alt="Santa Balbúrdia - The Game" class="header-logo">
+      <div class="header-title">Santa Balbúrdia – The Game</div>
+      <div class="header-subtitle">Party game 18+ para festas, rolês e encontros entre amigos.</div>
       <nav class="nav">
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#screens">Por dentro do app</a>
-        <a href="#destaques">Por que é diferente</a>
+        <a href="#sobre">Sobre o app</a>
+        <a href="#modos">Modos de jogo</a>
         <a href="#premium">Premium</a>
         <a href="#seguranca">Segurança</a>
         <a href="#faq">FAQ</a>
@@ -814,440 +302,183 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div>
-          <p class="hero-copy-eyebrow">Party game 18+ para iOS e Android</p>
-          <h1 class="hero-title">
-            O app que transforma qualquer rolê em
-            <span class="hero-highlight">histórias caóticas e inesquecíveis.</span>
-          </h1>
-          <p class="hero-subtitle">
-            Santa Balbúrdia – The Game é um jogo de festa 18+ feito para jogar PRESENCIALMENTE:
-            todo mundo em volta do celular, rindo alto, votando, sendo “o escolhido” e criando
-            histórias que viram piada interna pra sempre.
-          </p>
-
-          <div class="hero-badges">
-            <span class="badge hot">Novo party game mobile</span>
-            <span class="badge">Perfeito para festas, pré-balada e encontros</span>
-            <span class="badge">Cartas seguras e +18, você escolhe</span>
-          </div>
-
-          <div class="hero-ctas">
-            <a href="#download" class="btn btn-primary">Baixar agora</a>
-            <a href="#premium" class="btn btn-ghost">Experimente a versão Premium</a>
-          </div>
-
-          <p class="hero-note">
-            Sem preparo, sem regra complicada: é abrir o app, juntar a galera em volta da tela e deixar a balbúrdia acontecer.
-          </p>
+      <section class="hero" id="top">
+        <div class="hero-eyebrow">Party game 18+ para iPhone</div>
+        <h1 class="hero-title">O app que decide quem vai encarar a próxima rodada.</h1>
+        <p class="hero-subtitle">
+          Santa Balbúrdia – The Game é um jogo de festa para jogar PRESENCIALMENTE, com todo mundo
+          em volta do celular. Perfeito para festas, pré-balada e encontros em que a missão é rir
+          alto e criar histórias caóticas.
+        </p>
+        <div class="hero-badges">
+          <span class="badge">Resta 1 (O Escolhido) com multi-toque</span>
+          <span class="badge">Modo cartas, incluindo Eu Nunca</span>
+          <span class="badge">Cartas seguras e +18, você escolhe</span>
         </div>
-
-        <aside class="hero-card" aria-label="Resumo do jogo">
-          <div class="hero-card-inner">
-            <img src="./LOGOSBOFICIAL.png" alt="Logo Santa Balbúrdia - The Game" class="hero-logo">
-            <p class="hero-card-title">Santa Balbúrdia - The Game</p>
-            <div class="hero-meta">
-              <span>+18 • Conteúdo adulto opcional</span>
-              <span>1 celular • até ~6 pessoas tocando na tela</span>
-              <span>Cartas seguras e cartas +18</span>
-            </div>
-            <div class="hero-rating">
-              <div>
-                <div class="hero-rating-stars">★★★★★</div>
-                <div style="font-size: 0.8rem; opacity: 0.9;">Pensado para festas, rolês, pré-baladas e encontros entre amigos.</div>
-              </div>
-              <span class="hero-rating-tag">Party game</span>
-            </div>
-          </div>
-        </aside>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#download">Baixar agora</a>
+          <a class="btn btn-secondary" href="#modos">Ver como funciona</a>
+        </div>
+        <p class="hero-note">
+          Sem regras complicadas: é abrir o app, juntar a galera e deixar a balbúrdia acontecer.
+        </p>
+        <img src="assets/home.jpeg" alt="Tela inicial do Santa Balbúrdia mostrando logo e botões de modos de jogo"
+             class="hero-screenshot">
       </section>
 
-      <section class="section" id="screens">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">Interface em ação</p>
-            <h2 class="section-title">Veja como é o app por dentro.</h2>
-          </div>
-          <p class="section-description">
-            Telas pensadas para uso em grupo: fundo roxo característico, botões grandes, textos
-            legíveis no escuro e animações que deixam tudo com cara de jogo de festa.
-          </p>
-        </div>
-
-        <div class="screens-grid">
-          <figure class="screen-card">
-            <img src="assets/home.jpeg" alt="Tela inicial do Santa Balbúrdia mostrando logo e botões de modos de jogo" class="screen-img">
-            <figcaption class="screen-caption">Tela inicial com logo e modos “Resta 1” e “Cartas”.</figcaption>
-          </figure>
-
-          <figure class="screen-card">
-            <img src="assets/resta1Menu.jpeg" alt="Tela do modo Resta 1 com opções de 1, 2 ou 3 ganhadores" class="screen-img">
-            <figcaption class="screen-caption">Modo Resta 1 com escolha de 1, 2 ou 3 ganhadores.</figcaption>
-          </figure>
-
-          <figure class="screen-card">
-            <img src="assets/resta!.jpeg" alt="Tela escura com círculos coloridos representando os toques na tela" class="screen-img">
-            <figcaption class="screen-caption">Sorteio em tempo real com círculos coloridos na tela.</figcaption>
-          </figure>
-
-          <figure class="screen-card">
-            <img src="assets/cardGame.jpeg" alt="Tela de carta revelada com texto de desafio" class="screen-img">
-            <figcaption class="screen-caption">Modo cartas com barra de progresso e carta em destaque.</figcaption>
-          </figure>
-
-          <figure class="screen-card">
-            <img src="assets/cardGameMenu.jpeg" alt="Tela de pacotes de cartas incluindo premium mensal" class="screen-img">
-            <figcaption class="screen-caption">Seleção de pacotes, incluindo packs Premium mensais.</figcaption>
-          </figure>
-        </div>
+      <section id="sobre" class="section">
+        <h2>Sobre o app</h2>
+        <p>
+          Santa Balbúrdia – The Game é um party game 18+ feito para ser usado em grupo, com
+          <strong>um celular no centro da roda</strong>. Nada de cada um no seu aparelho: a graça é
+          todo mundo ver e reagir junto.
+        </p>
+        <p>
+          Você escolhe se quer jogar com cartas seguras, com conteúdo +18 ou misturar as duas
+          coisas. O app também oferece assinatura Premium com pacotes extras de cartas, incluindo
+          packs mensais sempre renovando o jogo.
+        </p>
       </section>
 
-      <section class="section" id="como-funciona">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">Dois jeitos de criar caos</p>
-            <h2 class="section-title">Como funciona o Santa Balbúrdia.</h2>
+      <section id="modos" class="section">
+        <h2>Modos de jogo</h2>
+
+        <h3>Resta 1 (O Escolhido)</h3>
+        <p>
+          Todo mundo coloca o dedo na tela ao mesmo tempo. Depois de alguns segundos de suspense,
+          com vibração e animações, o app escolhe quem vai encarar a próxima.
+        </p>
+        <ul>
+          <li>Até cerca de 6 dedos na tela ao mesmo tempo.</li>
+          <li>Defina se quer 1, 2 ou 3 escolhidos por rodada.</li>
+          <li>Círculos coloridos para cada jogador, com destaques especiais para os escolhidos.</li>
+          <li>Perfeito para decidir quem começa o jogo, quem paga a próxima rodada ou quem cumpre
+            o desafio mais absurdo.</li>
+        </ul>
+
+        <h3>Cartas de festa (incluindo Eu Nunca)</h3>
+        <p>
+          Use o app como um baralho infinito de cartas para jogos de festa. Inclui modo dedicado
+          para <strong>Eu Nunca</strong> e outros tipos de desafios.
+        </p>
+        <ul>
+          <li>Cartas seguras e cartas +18, separadas por filtros.</li>
+          <li>Cartas próprias para Eu Nunca, com tela de boas-vindas explicando o modo.</li>
+          <li>Crie suas próprias cartas, marcando se são Eu Nunca e se têm conteúdo adulto.</li>
+          <li>Tela de ver cartas com busca, filtros e ordenação.</li>
+          <li>Durante o jogo: barra de progresso, cartas animadas e botões grandes para próxima,
+            anterior e reset.</li>
+        </ul>
+
+        <div class="screens-row" aria-label="Telas do app">
+          <div class="screen-item">
+            <img src="assets/resta1Menu.jpeg" alt="Menu do modo Resta 1 com opções de ganhadores">
+            <div>Opções de ganhadores no Resta 1.</div>
           </div>
-          <p class="section-description">
-            Um app, dois modos principais: o **O Escolhido**, que decide quem vai encarar a próxima,
-            e o modo **Cartas**, com “Eu Nunca” e outros jogos de festa em um só lugar.
-          </p>
-        </div>
-
-        <div class="two-column">
-          <article class="mode-card">
-            <p class="mode-label">Modo O Escolhido</p>
-            <h3 class="mode-title">Todo mundo encosta na tela, o app escolhe quem vai encarar.</h3>
-            <p class="mode-text">
-              No modo <strong>O Escolhido</strong>, a regra é simples: todo mundo coloca o dedo na tela
-              ao mesmo tempo, o app faz uma contagem regressiva com vibração e animações, e então
-              decide aleatoriamente quem vai ser o(a) “sortudo(a)” da vez.
-            </p>
-            <ul class="mode-list">
-              <li><strong>Até ~6 pessoas</strong> tocando na tela ao mesmo tempo.</li>
-              <li><strong>Contagem de ~4 segundos</strong> com vibração e cores pulsando para criar suspense.</li>
-              <li><strong>Escolha quantos serão escolhidos</strong>: 1, 2 ou 3 por rodada.</li>
-              <li><strong>Círculos coloridos animados</strong> em volta de cada dedo.</li>
-              <li><strong>Cores especiais</strong> (dourado, prata, bronze) para quem for selecionado.</li>
-            </ul>
-            <div class="pill-list">
-              <span class="pill">Quem começa o jogo</span>
-              <span class="pill">Quem paga a próxima rodada</span>
-              <span class="pill">Quem cumpre o próximo desafio</span>
-            </div>
-          </article>
-
-          <article class="mode-card">
-            <p class="mode-label">Modo Cartas (Eu Nunca e outros)</p>
-            <h3 class="mode-title">Sistema completo de cartas pra “Eu Nunca” e muito mais.</h3>
-            <p class="mode-text">
-              Transforme o celular em um baralho infinito de cartas de festa. Jogue “Eu Nunca”
-              e outros modos com cartas animadas, barra de progresso e textos grandes, perfeitos
-              para ler em roda, mesmo no escuro.
-            </p>
-            <ul class="mode-list">
-              <li><strong>Cartas seguras e +18</strong>: escolha se o rolê vai ser leve ou mais apimentado.</li>
-              <li><strong>Modo “Eu Nunca” dedicado</strong>, com tela de boas-vindas explicando as regras e o número de cartas.</li>
-              <li><strong>Crie suas próprias cartas</strong>: título, descrição, marcação de “Eu Nunca” e se é conteúdo adulto.</li>
-              <li><strong>Tela “Ver Cartas” completa</strong>: busca por texto, filtros por tipo e nível (seguras/+18), ordenação por título, data ou tipo.</li>
-              <li><strong>Lista com estados bonitos</strong>: vazio, carregando e erro pensados para o uso real.</li>
-              <li><strong>Modais dedicados</strong> para ver detalhes, criar e editar cartas sem sair da lista.</li>
-              <li><strong>Durante o jogo</strong>: barra de progresso, animações de entrada/escala/deslize e botões grandes para próxima, anterior, revelar e resetar.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="destaques">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">Por que é diferente</p>
-            <h2 class="section-title">Não é só pergunta aleatória. É experiência de festa.</h2>
+          <div class="screen-item">
+            <img src="assets/resta!.jpeg" alt="Tela escura com círculos coloridos representando os toques na tela">
+            <div>Sorteio com círculos coloridos na tela.</div>
           </div>
-          <p class="section-description">
-            O app foi pensado para ser usado em grupo, no escuro do bar ou da sala, com tela cheia,
-            letras grandes, animações e vibração no momento certo.
-          </p>
-        </div>
-
-        <div class="cards-grid">
-          <article class="card-feature">
-            <div class="card-feature-icon">🎉</div>
-            <h3 class="card-feature-title">Feito para tela compartilhada</h3>
-            <p class="card-feature-text">
-              Interface pensada para todo mundo ver ao mesmo tempo: textos grandes, botões chamativos
-              e ótima legibilidade no escuro, ideal para festas, pré-balada e after.
-            </p>
-          </article>
-
-          <article class="card-feature">
-            <div class="card-feature-icon">🌈</div>
-            <h3 class="card-feature-title">Visual de jogo de festa</h3>
-            <p class="card-feature-text">
-              Roxos e violetas com gradientes coloridos, ícones personalizados, círculos animados no
-              modo O Escolhido e cartas com animações suaves em cada transição.
-            </p>
-          </article>
-
-          <article class="card-feature">
-            <div class="card-feature-icon">🌓</div>
-            <h3 class="card-feature-title">Tema claro, escuro e automático</h3>
-            <p class="card-feature-text">
-              Use o tema claro, o modo noite ou deixe o app acompanhar automaticamente o tema do
-              sistema, com mudanças fluidas entre um e outro.
-            </p>
-          </article>
-
-          <article class="card-feature">
-            <div class="card-feature-icon">🃏</div>
-            <h3 class="card-feature-title">Cartas realmente personalizáveis</h3>
-            <p class="card-feature-text">
-              Crie baralhos com a cara do seu grupo: cartas seguras pro churrasco em família, cartas
-              +18 pro after com amigos e filtros para alternar entre essas duas vibes.
-            </p>
-          </article>
-
-          <article class="card-feature">
-            <div class="card-feature-icon">📳</div>
-            <h3 class="card-feature-title">Feedback tátil em tudo que importa</h3>
-            <p class="card-feature-text">
-              Cada revelação de carta, cada escolha de jogador e cada ação importante acompanha um
-              feedback de vibração pra dar peso às decisões e manter todo mundo atento.
-            </p>
-          </article>
-
-          <article class="card-feature">
-            <div class="card-feature-icon">♻️</div>
-            <h3 class="card-feature-title">Rejogável por natureza</h3>
-            <p class="card-feature-text">
-              Combinações infinitas de cartas, modo O Escolhido com múltiplos usos e packs Premium
-              mensais fazem com que nenhuma noite de Santa Balbúrdia seja igual à outra.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="premium">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">Mais cartas, mais caos</p>
-            <h2 class="section-title">Versão Premium: packs mensais e conteúdo exclusivo.</h2>
+          <div class="screen-item">
+            <img src="assets/cardGame.jpeg" alt="Tela de carta revelada com texto de desafio">
+            <div>Cartas com barra de progresso e animações.</div>
           </div>
-          <p class="section-description">
-            A versão gratuita já rende muita história. Mas se a galera curtir mesmo, o Premium
-            libera pacotes extras de cartas, conteúdos +18 mais intensos e packs temáticos que
-            mudam todo mês.
-          </p>
-        </div>
-
-        <div class="premium-banner">
-          <div>
-            <p class="premium-badge">O que você ganha ao assinar</p>
-            <h3 class="download-copy-title">Santa Balbúrdia sempre com carta nova na manga.</h3>
-            <p class="download-copy-sub">
-              A assinatura Premium libera mais cartas, conteúdos exclusivos e pacotes mensais rotativos.
-              Todo mês um pack diferente entra em cena para manter o jogo fresco, surpreendente e
-              alinhado com o clima do momento.
-            </p>
-            <p class="premium-note">
-              A assinatura é feita diretamente pela <strong>App Store</strong> ou <strong>Google Play</strong>,
-              com cobrança transparente e <strong>cancelamento a qualquer momento</strong>.
-            </p>
-          </div>
-          <div class="compare">
-            <div class="compare-col">
-              <p class="compare-title">Versão gratuita</p>
-              <p>✔ Modo O Escolhido</p>
-              <p>✔ Pacotes básicos de cartas</p>
-              <p>✔ Cartas seguras e algumas cartas +18</p>
-              <p>✔ Criação de cartas próprias</p>
-            </div>
-            <div class="compare-col">
-              <p class="compare-title">Versão Premium</p>
-              <p>✔ <strong>Todos os benefícios da versão gratuita</strong></p>
-              <p>✔ Pacotes Premium com cartas exclusivas</p>
-              <p>✔ Conteúdos +18 mais avançados</p>
-              <p>✔ <strong>Packs rotativos por mês</strong>, sempre renovando o jogo</p>
-              <p>✔ Sincronização da assinatura entre dispositivos</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top: 1.4rem;">
-          <a href="#download" class="btn btn-primary">Experimente a versão Premium</a>
-        </div>
-      </section>
-
-      <section class="section" id="conta">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">Conta e preferências</p>
-            <h2 class="section-title">Login opcional, mas perfeito pra quem joga sempre.</h2>
-          </div>
-          <p class="section-description">
-            Você não é obrigado a criar conta para jogar. Mas, se quiser levar o rolê a sério,
-            o login ajuda a sincronizar assinatura, preferências e cartas personalizadas.
-          </p>
-        </div>
-
-        <div class="login-grid">
-          <div>
-            <h3 class="section-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Como funciona o login</h3>
-            <p class="section-description" style="max-width: none; margin-bottom: 0.7rem;">
-              Escolha como quer se conectar:
-            </p>
-            <ul class="login-list">
-              <li><strong>E-mail e senha</strong> para quem prefere o clássico.</li>
-              <li><strong>Login com Google</strong> para quem quer entrar em um toque.</li>
-              <li><strong>Sign in with Apple</strong> para quem usa iOS e gosta de tudo integrado.</li>
-            </ul>
-            <p class="section-description" style="max-width: none; margin-top: 0.7rem;">
-              Com a conta criada, você pode:
-            </p>
-            <ul class="login-list">
-              <li>Sincronizar a assinatura Premium entre iOS e Android.</li>
-              <li>Guardar preferências de tema (claro, escuro, automático).</li>
-              <li>Manter suas cartas criadas salvas mesmo trocando de aparelho.</li>
-            </ul>
-          </div>
-          <div class="mode-card">
-            <p class="mode-label">Configurações do app</p>
-            <h3 class="mode-title">Tudo que você precisa para deixar o jogo com a sua cara.</h3>
-            <ul class="mode-list">
-              <li><strong>Tema claro, escuro ou automático</strong> seguindo o tema do sistema.</li>
-              <li><strong>Seção “Segurança / Controles dos pais”</strong>
-                explicando que o app é 18+ e como limitar o acesso usando recursos do iOS e Android.</li>
-              <li><strong>Seção Legal</strong> com acesso rápido à Política de Privacidade e Termos de Uso (EULA).</li>
-              <li><strong>Modal de sugestões</strong> para enviar ideias, feedbacks e melhorias direto para o desenvolvedor.</li>
-              <li><strong>Botão de avaliação</strong> para deixar sua nota na App Store ou Google Play.</li>
-            </ul>
+          <div class="screen-item">
+            <img src="assets/cardGameMenu.jpeg" alt="Tela de pacotes de cartas incluindo premium mensal">
+            <div>Seleção de pacotes, incluindo packs Premium mensais.</div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="seguranca">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">Segurança, 18+ e LGPD</p>
-            <h2 class="section-title">Adulto, mas responsável com privacidade e controles.</h2>
-          </div>
-          <p class="section-description">
-            Santa Balbúrdia – The Game é um jogo 18+ para entretenimento entre adultos, com
-            informação clara sobre uso, privacidade e formas de limitar o acesso por menores.
-          </p>
+      <section id="premium" class="section">
+        <h2>Versão Premium</h2>
+        <p>
+          A versão gratuita já garante muita risada. A assinatura Premium é para quem quer levar
+          o rolê a outro nível.
+        </p>
+        <ul>
+          <li>Pacotes extras de cartas com temas especiais.</li>
+          <li>Conteúdo +18 mais intenso para grupos que curtem ir além.</li>
+          <li>Packs Premium rotativos: todo mês um pacote diferente é liberado.</li>
+          <li>Assinatura gerenciada pela App Store / Google Play, com cancelamento a qualquer momento.</li>
+        </ul>
+        <p>
+          Se você criar uma conta (e-mail/senha, Google ou Apple), sua assinatura e preferências
+          podem ser sincronizadas entre dispositivos.
+        </p>
+      </section>
+
+      <section id="seguranca" class="section">
+        <h2>Segurança e privacidade</h2>
+        <p>
+          Santa Balbúrdia – The Game é um app <strong>destinado a maiores de 18 anos</strong>.
+          É um jogo de cartas para entretenimento entre adultos e não incentiva comportamentos
+          ilegais ou o uso irresponsável de álcool e outras substâncias.
+        </p>
+        <ul>
+          <li>Você escolhe se quer jogar apenas com cartas seguras ou incluir cartas +18.</li>
+          <li>Seção de segurança no app explicando como usar Tempo de Uso / Screen Time (iOS) e
+            controles parentais do Android para limitar o acesso por menores.</li>
+          <li>Política de Privacidade alinhada à LGPD e Termos de Uso (EULA) disponíveis para
+            consulta.</li>
+        </ul>
+        <p>
+          Veja mais detalhes em
+          <a href="politica-e-termos.html" style="color:#FFCF4B; text-decoration:underline;">Política de Privacidade e Termos de Uso</a>.
+        </p>
+      </section>
+
+      <section id="faq" class="section">
+        <h2>FAQ rápido</h2>
+
+        <div class="faq-item">
+          <strong>O app é gratuito?</strong>
+          <p>Sim. Você pode baixar e jogar de graça com o modo Resta 1 e pacotes básicos de cartas.
+            A versão Premium é opcional.</p>
         </div>
 
-        <div class="two-column">
-          <div class="legal-box">
-            <h3>Conteúdo e faixa etária</h3>
-            <p>
-              O app é <strong>destinado a maiores de 18 anos</strong>. O foco é humor, situações
-              inusitadas e dinâmicas de festa entre adultos. Não incentivamos comportamentos
-              ilegais, uso irresponsável de álcool ou qualquer tipo de violência.
-            </p>
-            <p style="margin-top: 0.6rem;">
-              Você escolhe se quer jogar apenas com <strong>cartas seguras</strong> ou habilitar
-              também o conteúdo <strong>+18</strong>. Os filtros permitem adaptar o jogo ao tipo de
-              grupo – desde amigos recém-conhecidos até amizades de longa data.
-            </p>
-            <div style="margin-top: 0.8rem;">
-              <span class="tag-18">18+ • Conteúdo adulto</span>
-            </div>
-          </div>
-          <div class="legal-box">
-            <h3>Privacidade, LGPD e controles dos pais</h3>
-            <p>
-              O app possui <strong>Política de Privacidade alinhada à LGPD</strong>, explicando como
-              dados como login, assinatura e preferências são tratados, além de <strong>Termos de Uso (EULA)</strong>
-              detalhando público-alvo, responsabilidades e direitos.
-            </p>
-            <p style="margin-top: 0.6rem;">
-              Em “Segurança / Controles dos pais”, explicamos como responsáveis podem usar
-              <strong>Tempo de Uso / Screen Time (iOS)</strong> e <strong>controles parentais do Android</strong>
-              para limitar o acesso de menores ao app.
-            </p>
-            <p style="margin-top: 0.6rem;">
-              Para mais detalhes jurídicos, consulte:
-              <a href="politica-e-termos.html">Política de Privacidade e Termos de Uso</a>.
-            </p>
-          </div>
+        <div class="faq-item">
+          <strong>O que eu ganho com a versão Premium?</strong>
+          <p>Mais cartas (incluindo conteúdos +18 mais intensos), pacotes temáticos que mudam todo
+            mês e um jogo que está sempre renovado.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Preciso de conta para jogar?</strong>
+          <p>Não. Você pode jogar sem criar conta. O login é útil para sincronizar assinatura,
+            preferências e cartas criadas entre dispositivos.</p>
+        </div>
+
+        <div class="faq-item">
+          <strong>É realmente 18+? Dá pra jogar com qualquer grupo?</strong>
+          <p>O app é pensado para adultos, mas você pode desativar as cartas +18 e usar apenas
+            cartas seguras, adaptando o tom ao tipo de grupo.</p>
         </div>
       </section>
 
-      <section class="section" id="faq">
-        <div class="section-header">
-          <div>
-            <p class="section-kicker">Perguntas rápidas</p>
-            <h2 class="section-title">Antes de começar a balbúrdia.</h2>
-          </div>
-        </div>
-
-        <div class="faq-grid">
-          <article class="faq-item">
-            <h3 class="faq-question">O app é gratuito?</h3>
-            <p class="faq-answer">
-              Sim. Você pode baixar e jogar <strong>de graça</strong> com o modo O Escolhido e
-              pacotes básicos de cartas. A assinatura Premium é opcional e serve para liberar
-              ainda mais cartas e conteúdos exclusivos.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">O que ganho com a versão Premium?</h3>
-            <p class="faq-answer">
-              Mais cartas (incluindo conteúdos +18 mais intensos), pacotes temáticos que
-              <strong>mudam todo mês</strong> e um jogo que está sempre renovado. A assinatura é
-              gerenciada pela App Store / Google Play e você pode cancelar quando quiser.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">Preciso de conta para jogar?</h3>
-            <p class="faq-answer">
-              Não. Você pode jogar sem login. A conta só é necessária se quiser <strong>sincronizar
-              assinatura</strong>, <strong>guardar suas cartas criadas</strong> e manter preferências
-              entre dispositivos.
-            </p>
-          </article>
-
-          <article class="faq-item">
-            <h3 class="faq-question">É realmente 18+? Dá pra jogar com todo tipo de grupo?</h3>
-            <p class="faq-answer">
-              Sim, o app é <strong>pensado para adultos</strong>. Mas você pode <strong>desativar
-              cartas +18</strong> e jogar só com cartas seguras, mantendo o tom leve para grupos
-              mistos, colegas de trabalho ou pessoas que você acabou de conhecer.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="download">
-        <div class="download-section">
-          <div>
-            <p class="section-kicker">Comece a jogar</p>
-            <h2 class="download-copy-title">Pronto para chamar a galera?</h2>
-            <p class="download-copy-sub">
-              Baixe agora no seu iPhone, reúna a galera em volta da tela e teste o modo O Escolhido,
-              os modos de cartas e, se quiser, libere o Premium para ver até onde o grupo aguenta.
-            </p>
-          </div>
-          <div class="store-buttons">
-            <a href="https://apps.apple.com/br/app/santa-balbúrdia-the-game/id6751453390" class="btn-store">
-              <span></span>
-              Baixar agora na App Store
-            </a>
-            <a href="#" class="btn-store" aria-disabled="true">
-              <span>▶</span>
-              Em breve no Google Play
-            </a>
-          </div>
+      <section id="download" class="download-section">
+        <h2>Baixe o Santa Balbúrdia – The Game</h2>
+        <p>
+          Baixe agora no seu iPhone, reúna a galera em volta da tela e teste o modo Resta 1,
+          os modos de cartas e, se quiser, libere o Premium para ver até onde o grupo aguenta.
+        </p>
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/br/app/santa-balbúrdia-the-game/id6751453390" class="btn-store">
+            <span></span>
+            Baixar na App Store
+          </a>
+          <a href="#" class="btn-store" aria-disabled="true">
+            <span>▶</span>
+            Em breve no Google Play
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <span>Santa Balbúrdia - The Game é um jogo de cartas para entretenimento entre adultos (18+). Não incentiva comportamentos ilegais nem o uso irresponsável de álcool ou outras substâncias.</span>
+      Santa Balbúrdia - The Game é um jogo de cartas para entretenimento entre adultos (18+). Não incentiva
+      comportamentos ilegais nem o uso irresponsável de álcool ou outras substâncias.
+      <br>
       <a href="politica-e-termos.html">Política de Privacidade e Termos de Uso (EULA)</a>
     </footer>
   </div>
